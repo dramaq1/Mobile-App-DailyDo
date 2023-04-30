@@ -13,10 +13,34 @@
         <action
             android:id="@+id/action_mainFragment_to_createTaskFragment"
             app:destination="@id/createTaskFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_calendarTasksFragment"
+            app:destination="@id/calendarTasksFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_statisticsTasksFragment"
+            app:destination="@id/statisticsTasksFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/createTaskFragment"
         android:name="com.example.dailydo.screens.CreateTaskFragment"
         android:label="fragment_create_task"
         tools:layout="@layout/fragment_create_task" />
+    <fragment
+        android:id="@+id/calendarTasksFragment"
+        android:name="com.example.dailydo.screens.CalendarTasksFragment"
+        android:label="fragment_calendar_tasks"
+        tools:layout="@layout/fragment_calendar_tasks" />
+    <fragment
+        android:id="@+id/statisticsTasksFragment"
+        android:name="com.example.dailydo.screens.StatisticsTasksFragment"
+        android:label="fragment_statistics_tasks"
+        tools:layout="@layout/fragment_statistics_tasks" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.dailydo.screens.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

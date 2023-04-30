@@ -8,25 +8,5 @@
     tools:context=".screens.MainFragment"
     tools:ignore="ExtraText">
 
-<androidx.appcompat.widget.Toolbar
-    android:id="@+id/toolbar"
-    android:minHeight="?attr/actionBarSize"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:title="@string/all_tusks"
-    android:background="@color/header"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:menu="@menu/top_nav_menu"
-    android:theme="@style/ToolbarTheme"
-    app:titleTextAppearance="@style/Toolbar.TitleText"
-    >
-
-
-
-</androidx.appcompat.widget.Toolbar>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
