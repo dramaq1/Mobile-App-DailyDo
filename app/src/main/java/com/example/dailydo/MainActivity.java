@@ -94,15 +94,12 @@ public class MainActivity extends AppCompatActivity {
             Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setDisplayShowHomeEnabled(false);
         }
-
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.top_nav_menu, menu);
         return true;
-
     }
 
     @Override
