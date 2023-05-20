@@ -1,6 +1,8 @@
 package com.example.dailydo;
 
+import android.view.DragEvent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -16,6 +18,8 @@ import java.util.List;
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
     private List<Task> tasks = new ArrayList<>();
     private OnTaskClickListener onTaskClickListener;
+
+
 
     @NonNull
     @Override
@@ -51,8 +55,17 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         this.onTaskClickListener = listener;
     }
 
+
     public interface OnTaskClickListener {
         void onTaskClick(Task task);
+    }
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void removeTask(int position) {
+        tasks.remove(position);
+        notifyItemRemoved(position);
     }
 
 
@@ -64,9 +77,18 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             this.binding = binding;
         }
 
+
         void bind(Task task) {
             binding.taskNameTextview.setText(task.getName());
             binding.iconColor.setColorFilter(task.getColorId());
+            if (task.isDone()) {
+                binding.taskStatusTextview.setText("Выполнено");
+                binding.imgClock.setImageResource(R.drawable.circle_done);
+
+            } else {
+                binding.taskStatusTextview.setText("Ожидает выполнения");
+                binding.imgClock.setImageResource(R.drawable.clock);
+            }
 
         }
     }

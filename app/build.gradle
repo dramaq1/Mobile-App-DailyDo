@@ -59,6 +59,6 @@ dependencies {
     implementation "androidx.navigation:navigation-ui:$nav_version"
 
     implementation 'com.github.yukuku:ambilwarna:2.0.1'
-
+    implementation 'it.xabaras.android:recyclerview-swipedecorator:1.4'
 
 }
