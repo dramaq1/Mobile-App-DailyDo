@@ -1,6 +1,8 @@
 package com.example.dailydo.screens;
 
+
 import android.os.Bundle;
+
 
 import androidx.fragment.app.Fragment;
 
@@ -10,6 +12,8 @@ import android.view.ViewGroup;
 
 import com.example.dailydo.R;
 
+
+
 public class CalendarTasksFragment extends Fragment {
 
     @Override
@@ -18,7 +22,6 @@ public class CalendarTasksFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_calendar_tasks, container, false);
     }
-
 
 
 }

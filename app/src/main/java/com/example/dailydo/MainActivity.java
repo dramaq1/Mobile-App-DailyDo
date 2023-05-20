@@ -1,6 +1,7 @@
 package com.example.dailydo;
 
 import androidx.annotation.NonNull;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -9,20 +10,25 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
 import com.example.dailydo.databinding.ActivityMainBinding;
+
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+
     private NavController navController;
     private AppBarConfiguration appBarConfiguration;
     private MenuItem settingsMenuItem;
     private MenuItem statisticsMenuItem;
     private MenuItem calendarMenuItem;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.toolbar);
+
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         navController = navHostFragment.getNavController();
@@ -54,9 +61,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.top_nav_menu, menu);
+
         settingsMenuItem = menu.findItem(R.id.btn_setting);
         statisticsMenuItem = menu.findItem(R.id.btn_stats);
         calendarMenuItem = menu.findItem(R.id.btn_calendar);
@@ -109,5 +121,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         return NavigationUI.navigateUp(navController, appBarConfiguration) || super.onSupportNavigateUp();
     }
+
 }
 

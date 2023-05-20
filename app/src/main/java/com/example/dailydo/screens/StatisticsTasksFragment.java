@@ -10,6 +10,7 @@ import com.example.dailydo.R;
 
 public class StatisticsTasksFragment extends Fragment {
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

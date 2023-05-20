@@ -1,5 +1,6 @@
 package com.example.dailydo.model;
 
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -95,3 +96,4 @@ public class Task {
         this.done = done;
     }
 }
+

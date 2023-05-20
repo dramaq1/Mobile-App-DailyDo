@@ -22,9 +22,11 @@ import com.example.dailydo.viewmodel.TaskViewModel;
 import java.util.List;
 
 
+
 public class MainFragment extends Fragment {
 
     FragmentMainBinding binding;
+
 
     private TaskViewModel taskViewModel;
     private TaskAdapter taskAdapter;
@@ -41,6 +43,7 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         navController = NavHostFragment.findNavController(this);
 
         taskAdapter = new TaskAdapter();
@@ -77,4 +80,8 @@ public class MainFragment extends Fragment {
         binding = null;
     }
 
-}
+
+    }
+
+
+

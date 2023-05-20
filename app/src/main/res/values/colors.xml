@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF182726</color>
+<<<<<<< HEAD
     <color name="light_black">#A6182726</color>
+=======
+>>>>>>> 52343be73171aa549b5e2d164b8fb599bb485b1d
     <color name="white">#FFFFFFFF</color>
     <color name="header">#FFFF7A5A</color>
     <color name="start_color">#FF8ED2C9</color>
     <color name="end_color">#FFFFBAA9</color>
     <color name="background">#FFF5F4EE</color>
+<<<<<<< HEAD
     <color name="task1_color">#FF8ED2C9</color>
     <color name="task2_color">#FFD0FFFA</color>
     <color name="light_yellow">#FFFCF4D9</color>
     <color name="light_blue">#FFDDF0EE</color>
+=======
+>>>>>>> 52343be73171aa549b5e2d164b8fb599bb485b1d
 
 </resources>

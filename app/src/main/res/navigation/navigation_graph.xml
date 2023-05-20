@@ -8,6 +8,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.dailydo.screens.MainFragment"
+
         android:label="@string/all_tusks"
         tools:layout="@layout/fragment_main" >
         <action
