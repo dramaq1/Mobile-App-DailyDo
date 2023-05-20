@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/tasks"
+        android:icon="@drawable/tasks"
+        android:id="@+id/tasks"
+        />
+
+    <item android:title="@string/habits"
+        android:icon="@drawable/habits"
+        android:id="@+id/habits"
+        />
+</menu>

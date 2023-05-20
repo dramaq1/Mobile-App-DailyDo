@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="icon_array">
+        <item>book</item>
+        <item>call</item>
+        <item>puzzle</item>
+        <item>football</item>
+
+    </string-array>
+</resources>

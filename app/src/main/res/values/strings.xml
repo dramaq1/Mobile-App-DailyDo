@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DailyDo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="all_tusks">Все задачи</string>
+    <string name="create_tusk">Создать задачу</string>
+    <string name="statistics">Статистика</string>
+    <string name="settings">Настройки</string>
+    <string name="tasks">Задачи</string>
+    <string name="habits">Привычки</string>
+    <string name="calendar">Календарь</string>
+    <string name="go_to_next_fragment">go_to_next_fragment</string>
+</resources>
