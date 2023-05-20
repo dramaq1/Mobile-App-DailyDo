@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_mainFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_taskFragment"
+            app:destination="@id/taskFragment" />
     </fragment>
     <fragment
         android:id="@+id/createTaskFragment"
@@ -44,4 +47,9 @@
         android:name="com.example.dailydo.screens.SettingsFragment"
         android:label="@string/settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.example.dailydo.screens.TaskFragment"
+        android:label="@string/task"
+        tools:layout="@layout/fragment_task" />
 </navigation>

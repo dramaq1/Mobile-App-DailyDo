@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="icon_array">
-        <item>book</item>
-        <item>call</item>
-        <item>puzzle</item>
-        <item>football</item>
+    <string-array name="icon_names">
+        <item>Время для себя</item>
+        <item>Семья</item>
+        <item>Друзья и близкие</item>
+        <item>Здоровье, спорт</item>
+        <item>Саморазвитие</item>
+        <item>Домашние дела</item>
+        <item>Работа</item>
+    </string-array>
 
+    <string-array name="icon_ids">
+        <item>@drawable/person</item>
+        <item>@drawable/family</item>
+        <item>@drawable/friends</item>
+        <item>@drawable/health</item>
+        <item>@drawable/book</item>
+        <item>@drawable/home</item>
+        <item>@drawable/job</item>
     </string-array>
 </resources>

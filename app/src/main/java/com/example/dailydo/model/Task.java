@@ -4,6 +4,7 @@ package com.example.dailydo.model;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import java.util.Date;
 
@@ -23,7 +24,7 @@ public class Task {
     private int colorId;
     private Date date;
     private boolean done;
-
+    @Ignore
     public Task(@NonNull String name, String description, int iconId, int colorId, Date date, boolean done) {
         this.name = name;
         setDescription(description);
@@ -33,10 +34,11 @@ public class Task {
         setDone(done);
     }
 
-    public Task(String name, String description, int color) {
+    public Task(String name, String description, int colorId, int iconId) {
         this.name = name;
         setDescription(description);
-        setColorId(color);
+        setColorId(colorId);
+        setIconId(iconId);
     }
 
     public int getId() {

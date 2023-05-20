@@ -70,8 +70,7 @@ public class MainFragment extends Fragment {
         taskAdapter.setOnTaskClickListener(new TaskAdapter.OnTaskClickListener() {
             @Override
             public void onTaskClick(Task task) {
-                // Здесь можно выполнить необходимые действия при нажатии на задачу
-                taskViewModel.delete(task);
+                navController.navigate(R.id.taskFragment);
             }
         });
 
