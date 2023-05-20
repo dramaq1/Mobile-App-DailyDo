@@ -1,6 +1,9 @@
 package com.example.dailydo.model;
 
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -9,7 +12,7 @@ import androidx.room.PrimaryKey;
 import java.util.Date;
 
 @Entity(tableName = "tasks")
-public class Task {
+public class Task implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
@@ -40,6 +43,24 @@ public class Task {
         setColorId(colorId);
         setIconId(iconId);
     }
+    protected Task(Parcel in) {
+        name = in.readString();
+        description = in.readString();
+        iconId = in.readInt();
+        colorId = in.readInt();
+    }
+
+    public static final Creator<Task> CREATOR = new Creator<Task>() {
+        @Override
+        public Task createFromParcel(Parcel in) {
+            return new Task(in);
+        }
+
+        @Override
+        public Task[] newArray(int size) {
+            return new Task[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -96,6 +117,19 @@ public class Task {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(description);
+        dest.writeInt(iconId);
+        dest.writeInt(colorId);
     }
 }
 

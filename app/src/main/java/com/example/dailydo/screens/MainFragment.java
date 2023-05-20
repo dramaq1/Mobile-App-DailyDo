@@ -70,7 +70,9 @@ public class MainFragment extends Fragment {
         taskAdapter.setOnTaskClickListener(new TaskAdapter.OnTaskClickListener() {
             @Override
             public void onTaskClick(Task task) {
-                navController.navigate(R.id.taskFragment);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("task", task);
+                navController.navigate(R.id.taskFragment, bundle);
             }
         });
 
