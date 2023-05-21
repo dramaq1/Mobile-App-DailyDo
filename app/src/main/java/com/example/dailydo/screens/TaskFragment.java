@@ -49,6 +49,7 @@ public class TaskFragment extends Fragment {
             binding.iconColor.setColorFilter(task.getColorId());
             binding.imgIcon.setImageResource(task.getIconId());
             binding.taskDate.setText(selectedDateText);
+            binding.timeOfDay.setText(task.getTimeOfDay());
         }
 
         binding.deleteTaskBtn.setOnClickListener(new View.OnClickListener() {

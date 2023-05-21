@@ -11,4 +11,9 @@
     <string name="habits">Привычки</string>
     <string name="calendar">Календарь</string>
     <string name="go_to_next_fragment">go_to_next_fragment</string>
+    <string name="morning">Утро</string>
+    <string name="day">День</string>
+    <string name="evening">Вечер</string>
+    <string name="night">Ночь</string>
+    <string name="notSet">Не задано</string>
 </resources>

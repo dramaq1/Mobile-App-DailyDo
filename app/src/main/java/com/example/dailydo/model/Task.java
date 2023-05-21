@@ -32,6 +32,8 @@ public class Task implements Parcelable {
 
     @TypeConverters(DateConverter.class)
     private Date date;
+
+    private String timeOfDay;
     private boolean done;
     @Ignore
     public Task(@NonNull String name, String description, int iconId, int colorId, Date date, boolean done) {
@@ -43,17 +45,19 @@ public class Task implements Parcelable {
         setDone(done);
     }
 
-    public Task(String name, String description, int colorId, int iconId) {
+    public Task(String name, String description, int colorId, int iconId, String timeOfDay) {
         this.name = name;
         setDescription(description);
         setColorId(colorId);
         setIconId(iconId);
+        setTimeOfDay(timeOfDay);
     }
     protected Task(Parcel in) {
         name = in.readString();
         description = in.readString();
         iconId = in.readInt();
         colorId = in.readInt();
+        timeOfDay = in.readString();
     }
 
     public static final Creator<Task> CREATOR = new Creator<Task>() {
@@ -101,6 +105,14 @@ public class Task implements Parcelable {
         this.date = date;
     }
 
+    public String getTimeOfDay() {
+        return timeOfDay;
+    }
+
+    public void setTimeOfDay(String timeOfDay) {
+        this.timeOfDay = timeOfDay;
+    }
+
     public int getIconId() {
         return iconId;
     }
@@ -137,5 +149,7 @@ public class Task implements Parcelable {
         dest.writeInt(iconId);
         dest.writeInt(colorId);
     }
+
+
 }
 

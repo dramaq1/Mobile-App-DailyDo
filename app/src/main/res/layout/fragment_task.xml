@@ -135,6 +135,7 @@
         app:layout_constraintTop_toTopOf="@+id/cont_time" />
 
     <TextView
+        android:id="@+id/time_of_day"
         android:layout_width="160dp"
         android:layout_height="20dp"
         android:fontFamily="@font/roboto_light"

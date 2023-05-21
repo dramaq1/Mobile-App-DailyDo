@@ -84,6 +84,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             binding.taskNameTextview.setText(task.getName());
             binding.iconColor.setColorFilter(task.getColorId());
             binding.imgIcon.setImageResource(task.getIconId());
+            binding.taskTimeTextview.setText(task.getTimeOfDay());
             if (task.isDone()) {
                 binding.taskStatusTextview.setText("Выполнено");
                 binding.imgClock.setImageResource(R.drawable.circle_done);
