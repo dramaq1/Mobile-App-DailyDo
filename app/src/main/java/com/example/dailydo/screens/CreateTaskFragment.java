@@ -1,5 +1,6 @@
 package com.example.dailydo.screens;
 
+import android.app.DatePickerDialog;
 import android.graphics.Color;
 
 
@@ -7,11 +8,13 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.fragment.app.FragmentManager;
 
 
 import android.view.LayoutInflater;
@@ -19,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.example.dailydo.R;
@@ -26,13 +30,19 @@ import com.example.dailydo.databinding.FragmentCreateTaskBinding;
 import com.example.dailydo.model.Task;
 import com.example.dailydo.viewmodel.TaskViewModel;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import yuku.ambilwarna.AmbilWarnaDialog;
 
 
-public class CreateTaskFragment extends Fragment {
+public class CreateTaskFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
 
     FragmentCreateTaskBinding binding;
     private int selectedColor;
+    private Date selectedDate;
+    private Date currentDate;
     private TaskViewModel taskViewModel;
     private NavController navController;
     private int selectedIconId;
@@ -50,6 +60,7 @@ public class CreateTaskFragment extends Fragment {
 
         taskViewModel = new ViewModelProvider(requireActivity()).get(TaskViewModel.class);
         navController = Navigation.findNavController(view);
+        setCurrentDate();
         binding.imgColor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +76,14 @@ public class CreateTaskFragment extends Fragment {
             }
         });
 
+        binding.dateCont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getChildFragmentManager(), "date picker");
+            }
+        });
+
         binding.createTaskButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,8 +91,6 @@ public class CreateTaskFragment extends Fragment {
                 String description = binding.descriptionEdittext.getText().toString().trim();
                 // Создание и сохранение задачи
                 createAndSaveTask(name, description, selectedColor);
-
-                //   switchToTaskListFragment();
             }
         });
     }
@@ -89,6 +106,7 @@ public class CreateTaskFragment extends Fragment {
             public void onOk(AmbilWarnaDialog dialog, int color) {
                 selectedColor = color;
                 binding.imgColor.setColorFilter(color);
+                binding.iconColor.setColorFilter(color);
             }
         });
         colorPicker.show();
@@ -107,6 +125,22 @@ public class CreateTaskFragment extends Fragment {
         dialogFragment.show(getChildFragmentManager(), "icon_picker_dialog");
     }
 
+    private void setCurrentDate(){
+        Calendar c = Calendar.getInstance();
+        currentDate = c.getTime();
+        String currentDateText = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+        binding.dateTextview.setText(currentDateText);
+    }
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        c.set(Calendar.MONTH, month);
+        c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        selectedDate = c.getTime();
+        String selectedDateText = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+        binding.dateTextview.setText(selectedDateText);
+    }
 
     private void createAndSaveTask(String name, String description, int color) {
         // Проверяем, что обязательные поля заполнены
@@ -117,10 +151,14 @@ public class CreateTaskFragment extends Fragment {
 
         // Создаем новую задачу
         Task task = new Task(name, description, color, selectedIconId);
+        if (selectedDate == null) {
+            task.setDate(currentDate);
+        } else {
+            task.setDate(selectedDate);
+        }
 
         // Сохраняем задачу в базе данных через ViewModel
         taskViewModel.insert(task);
-
         // Очищаем поля ввода
         binding.titleEdittext.setText("");
         binding.descriptionEdittext.setText("");

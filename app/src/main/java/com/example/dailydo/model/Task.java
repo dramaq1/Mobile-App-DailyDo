@@ -9,6 +9,10 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+
+import com.example.dailydo.data.DateConverter;
+
 import java.util.Date;
 
 @Entity(tableName = "tasks")
@@ -25,6 +29,8 @@ public class Task implements Parcelable {
 
     private int iconId;
     private int colorId;
+
+    @TypeConverters(DateConverter.class)
     private Date date;
     private boolean done;
     @Ignore

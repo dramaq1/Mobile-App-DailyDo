@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".screens.CreateTaskFragment">
-
+    tools:context=".screens.CreateTaskFragment"
+    android:background="@color/background"
+    >
 
 
     <EditText
@@ -28,6 +29,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="16dp"
+
         android:hint="Описание"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +37,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/icon_color_cont"
         android:layout_width="match_parent"
         android:layout_height="94dp"
         android:layout_marginStart="16dp"
@@ -44,7 +46,7 @@
         android:background="@drawable/rounded_corners"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_edittext"/>
+        app:layout_constraintTop_toBottomOf="@+id/description_edittext" />
 
     <ImageView
         android:id="@+id/iconColor"
@@ -52,9 +54,9 @@
         android:layout_height="62dp"
         android:layout_marginStart="16dp"
         android:src="@drawable/baseline_circle_24"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/icon_color_cont"
+        app:layout_constraintStart_toStartOf="@+id/icon_color_cont"
+        app:layout_constraintTop_toTopOf="@+id/icon_color_cont" />
 
     <ImageView
         android:id="@+id/imgIcon"
@@ -67,15 +69,15 @@
         app:layout_constraintTop_toTopOf="@+id/iconColor" />
 
     <TextView
-        android:layout_width="60dp"
+        android:layout_width="80dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
-        android:text="Иконка"
+        android:text="Категория"
         android:fontFamily="@font/roboto_medium"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/icon_color_cont"
         app:layout_constraintStart_toEndOf="@+id/iconColor"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="@+id/icon_color_cont" />
 
     <TextView
         android:layout_width="50dp"
@@ -84,9 +86,9 @@
         android:fontFamily="@font/roboto_medium"
         android:textSize="16sp"
         android:text="Цвет"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/icon_color_cont"
         app:layout_constraintStart_toEndOf="@+id/imgColor"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="@+id/icon_color_cont" />
 
     <ImageView
         android:id="@+id/imgColor"
@@ -94,9 +96,218 @@
         android:layout_height="62dp"
         android:layout_marginStart="192dp"
         android:src="@drawable/baseline_circle_24"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/icon_color_cont"
+        app:layout_constraintStart_toStartOf="@+id/icon_color_cont"
+        app:layout_constraintTop_toTopOf="@+id/icon_color_cont" />
+
+
+    <ImageView
+        android:id="@+id/date_cont"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_corners"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon_color_cont" />
+
+    <ImageView
+        android:id="@+id/date_textview_cont"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/half_rounded_corners"
+        app:layout_constraintBottom_toBottomOf="@+id/date_cont"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon_color_cont" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Дата"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/date_textview_cont"
+        app:layout_constraintEnd_toEndOf="@+id/date_textview_cont"
+        app:layout_constraintStart_toStartOf="@+id/date_textview_cont"
+        app:layout_constraintTop_toTopOf="@+id/date_textview_cont" />
+
+
+    <TextView
+        android:id="@+id/date_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Понедельник, 22.05.2023"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/date_cont"
+        app:layout_constraintEnd_toEndOf="@+id/date_cont"
+        app:layout_constraintStart_toStartOf="@+id/date_cont"
+        app:layout_constraintTop_toTopOf="@+id/date_cont" />
+
+
+    <ImageView
+        android:id="@+id/time_cont"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_corners"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_cont" />
+
+    <ImageView
+        android:id="@+id/time_textview_cont"
+        android:layout_width="102dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/half_rounded_corners"
+        app:layout_constraintBottom_toBottomOf="@+id/time_cont"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_cont" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Время дня"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/time_textview_cont"
+        app:layout_constraintEnd_toEndOf="@+id/time_textview_cont"
+        app:layout_constraintStart_toStartOf="@+id/time_textview_cont"
+        app:layout_constraintTop_toTopOf="@+id/time_textview_cont" />
+
+
+    <ImageView
+        android:id="@+id/morning_ic"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="22dp"
+        android:src="@drawable/baseline_circle_24"
+        app:layout_constraintEnd_toStartOf="@+id/day_ic"
+        app:layout_constraintStart_toStartOf="@+id/time_cont"
+        app:layout_constraintTop_toTopOf="@+id/time_cont" />
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/morning"
+        app:layout_constraintBottom_toBottomOf="@+id/morning_ic"
+        app:layout_constraintEnd_toEndOf="@+id/morning_ic"
+        app:layout_constraintStart_toStartOf="@+id/morning_ic"
+        app:layout_constraintTop_toTopOf="@+id/morning_ic" />
+
+    <ImageView
+        android:id="@+id/day_ic"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="22dp"
+        android:src="@drawable/baseline_circle_24"
+        app:layout_constraintEnd_toStartOf="@+id/evening_ic"
+        app:layout_constraintStart_toEndOf="@+id/morning_ic"
+        app:layout_constraintTop_toTopOf="@+id/time_cont" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/day"
+        app:layout_constraintBottom_toBottomOf="@+id/day_ic"
+        app:layout_constraintEnd_toEndOf="@+id/day_ic"
+        app:layout_constraintStart_toStartOf="@+id/day_ic"
+        app:layout_constraintTop_toTopOf="@+id/day_ic"/>
+
+    <ImageView
+        android:id="@+id/evening_ic"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="22dp"
+        android:src="@drawable/baseline_circle_24"
+        app:layout_constraintEnd_toStartOf="@+id/night_ic"
+        app:layout_constraintStart_toEndOf="@+id/day_ic"
+        app:layout_constraintTop_toTopOf="@+id/time_cont" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/evening"
+        app:layout_constraintBottom_toBottomOf="@+id/evening_ic"
+        app:layout_constraintEnd_toEndOf="@+id/evening_ic"
+        app:layout_constraintStart_toStartOf="@+id/evening_ic"
+        app:layout_constraintTop_toTopOf="@+id/evening_ic"/>
+
+    <ImageView
+        android:id="@+id/night_ic"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/baseline_circle_24"
+        app:layout_constraintEnd_toEndOf="@+id/time_cont"
+        app:layout_constraintStart_toEndOf="@+id/evening_ic"
+        app:layout_constraintTop_toTopOf="@+id/time_cont" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/eve"
+        app:layout_constraintBottom_toBottomOf="@+id/night_ic"
+        app:layout_constraintEnd_toEndOf="@+id/night_ic"
+        app:layout_constraintStart_toStartOf="@+id/night_ic"
+        app:layout_constraintTop_toTopOf="@+id/night_ic"/>
+
+
+    <TextView
+        android:id="@+id/morning_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Утро"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/day_textview"
+        app:layout_constraintStart_toStartOf="@+id/time_cont"
+        app:layout_constraintTop_toBottomOf="@+id/morning_ic" />
+
+    <TextView
+        android:id="@+id/day_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="День"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/evening_textview"
+        app:layout_constraintStart_toEndOf="@+id/morning_textview"
+        app:layout_constraintTop_toBottomOf="@+id/day_ic" />
+
+    <TextView
+        android:id="@+id/evening_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Вечер"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/night_textview"
+        app:layout_constraintStart_toEndOf="@+id/day_textview"
+        app:layout_constraintTop_toBottomOf="@+id/evening_ic" />
+
+    <TextView
+        android:id="@+id/night_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Ночь"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/time_cont"
+        app:layout_constraintStart_toEndOf="@+id/evening_textview"
+        app:layout_constraintTop_toBottomOf="@+id/night_ic" />
 
     <Button
         android:id="@+id/create_task_button"

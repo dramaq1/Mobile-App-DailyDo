@@ -18,6 +18,9 @@ import com.example.dailydo.databinding.FragmentTaskBinding;
 import com.example.dailydo.model.Task;
 import com.example.dailydo.viewmodel.TaskViewModel;
 
+import java.text.DateFormat;
+import java.util.Date;
+
 public class TaskFragment extends Fragment {
     private NavController navController;
     private FragmentTaskBinding binding;
@@ -33,8 +36,11 @@ public class TaskFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         taskViewModel = new ViewModelProvider(requireActivity()).get(TaskViewModel.class);
         navController = Navigation.findNavController(view);
+
+
         // Получение данных о задаче из аргументов фрагмента
         Task task = getArguments().getParcelable("task");
+        String selectedDateText = DateFormat.getDateInstance(DateFormat.FULL).format(task.getDate().getTime());
 
         if (task != null) {
             // Установка данных задачи в соответствующие поля макета
@@ -42,6 +48,7 @@ public class TaskFragment extends Fragment {
             binding.taskDescriptionTextView.setText(task.getDescription());
             binding.iconColor.setColorFilter(task.getColorId());
             binding.imgIcon.setImageResource(task.getIconId());
+            binding.taskDate.setText(selectedDateText);
         }
 
         binding.deleteTaskBtn.setOnClickListener(new View.OnClickListener() {
