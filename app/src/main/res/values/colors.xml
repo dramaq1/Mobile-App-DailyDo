@@ -3,7 +3,8 @@
     <color name="black">#FF182726</color>
     <color name="light_black">#A6182726</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="header">#FFFF7A5A</color>
+    <color name="header">#FFFEB9AA</color>
+    <color name="orange">#FFFF7A5A</color>
     <color name="start_color">#FF8ED2C9</color>
     <color name="end_color">#FFFFBAA9</color>
     <color name="background">#FFF5F4EE</color>

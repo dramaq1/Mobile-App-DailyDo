@@ -96,7 +96,7 @@ public class CreateTaskFragment extends Fragment implements DatePickerDialog.OnD
             if (selectedButton != null) {
                 selectedButton.setColorFilter(null);
             }
-            btn.setColorFilter(ContextCompat.getColor(requireContext(), R.color.header));
+            btn.setColorFilter(ContextCompat.getColor(requireContext(), R.color.orange));
             selectedButton = btn;
         });
     }

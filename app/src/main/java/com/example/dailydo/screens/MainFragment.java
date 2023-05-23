@@ -25,6 +25,10 @@ import com.example.dailydo.TaskAdapter;
 import com.example.dailydo.databinding.FragmentMainBinding;
 import com.example.dailydo.model.Task;
 import com.example.dailydo.viewmodel.TaskViewModel;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
@@ -137,7 +141,6 @@ public class MainFragment extends Fragment {
 
         });
     }
-
 
     @Override
     public void onDestroyView() {

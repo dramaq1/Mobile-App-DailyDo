@@ -1,8 +1,6 @@
 package com.example.dailydo;
 
-import android.view.DragEvent;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -39,6 +37,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                 onTaskClickListener.onTaskClick(task);
             }
         });
+
 
     }
 
